@@ -1,6 +1,10 @@
 # PointerObserver.js
 Observe mouse and touches
 
+## Ussage
+
+[doc](https://doc.deno.land/https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@1.0.0/PointerObserver.js)
+
 ## Install
 
 ```js
