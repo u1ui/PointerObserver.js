@@ -1,10 +1,10 @@
 # PointerObserver.js
-undefined
+Observe mouse and touches
 
 ## Install
 
 ```js
-import {PointerObserver} from "https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@x.x.x/PointerObserver.min.js"
+import {PointerObserver} from "https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@1.0.0/PointerObserver.min.js"
 ```
 
 ## Demos
