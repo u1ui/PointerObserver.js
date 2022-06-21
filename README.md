@@ -1,15 +1,15 @@
-# undefined
+# PointerObserver.js
 undefined
-
-## Demo
-
-https://raw.githack.com/u1ui/PointerObserver.js/main/tests/test.html  
 
 ## Install
 
-```html
-<script src="https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@x.x.x/PointerObserver.min.js" type=module>
+```js
+import {PointerObserver} from "https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@x.x.x/PointerObserver.min.js"
 ```
+
+## Demos
+
+[test.html](https://raw.githack.com/u1ui/PointerObserver.js/main/tests/test.html)  
 
 ## About
 
