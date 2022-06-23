@@ -97,14 +97,14 @@ export class PointerObserver {
 		touching = false;
 	}
 
-    /*
-    get lastDiff() { // should we direct calculate this before onmove? i think .startDiff is almost ever used
+    get diff() { // should we direct calculate this before onmove? i think .startDiff is almost ever used
         return {
             x: this.pos.x - this.last.x,
             y: this.pos.y - this.last.y,
             time: this.pos.time - this.last.time,
         };
     }
+    /*
     get startDiff() {
         return {
             x: this.posStart.x - this.pos.x,
