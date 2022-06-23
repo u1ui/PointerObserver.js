@@ -21,7 +21,9 @@ export class PointerObserver {
         this.move = this.move.bind(this);
         this.stop = this.stop.bind(this);
 
-        if (!touching) el.addEventListener('mousedown', this.start); // not before mousedown when touching, (because touch is triggering mousedown also?)
+        if (!touching) {
+			el.addEventListener('mousedown', this.start); // not before mousedown when touching, (because touch is triggering mousedown also?)
+		}
         el.addEventListener('touchstart', this.start, {passive: this.options.passive});
     }
 	start(e) {
