@@ -26,8 +26,8 @@ import {PointerObserver} from "https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.
 
 ## Demos
 
-[minimal.html](http://gcdn.li/u1ui/PointerObserver.js/main/tests/minimal.html)  
-[test.html](http://gcdn.li/u1ui/PointerObserver.js/main/tests/test.html)  
+[minimal.html](http://gcdn.li/u1ui/PointerObserver.js@main/tests/minimal.html)  
+[test.html](http://gcdn.li/u1ui/PointerObserver.js@main/tests/test.html)  
 
 ## About
 
