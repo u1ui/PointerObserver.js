@@ -1,8 +1,6 @@
 
 const d = document;
 
-let touching = false;
-
 export class PointerObserver {
     constructor(el, options) {
 
@@ -21,14 +19,16 @@ export class PointerObserver {
         this.move = this.move.bind(this);
         this.stop = this.stop.bind(this);
 
+
 		el.addEventListener('mousedown', this.start);  // why mousedown when only options.touch? To be able to change options after creating the observer?
         el.addEventListener('touchstart', this.start, {passive: this.options.passive});
     }
 	start(e) {
+		if (this.running) return;
 		if (e.type === 'mousedown'  && !this.options.mouse) return;
 		if (e.type === 'touchstart' && !this.options.touch) return;
-		if (e.type === 'touchstart') this.touching = true;
-		if (this.touching && e.type === 'mousedown') return;
+		//if (e.type === 'touchstart') this.touching = true;
+		//if (this.touching && e.type === 'mousedown') return;
 
 		let pointer = e;
 		if (e.touches) {
@@ -37,6 +37,7 @@ export class PointerObserver {
 			this.identifier = pointer.identifier;
 		}
 
+
 		this.abortCtrl = new AbortController();
 		let signal = this.abortCtrl.signal;
 
@@ -44,6 +45,9 @@ export class PointerObserver {
 			x:pointer.pageX,
 			y:pointer.pageY
 		};
+
+		this.onstart && this.onstart(e);
+
 		if (this.options.mouse) {
             d.addEventListener('mousemove', this.move, {signal});
             d.addEventListener('mouseup'  , this.stop, {signal});
@@ -54,8 +58,7 @@ export class PointerObserver {
             d.addEventListener('touchend' , this.stop, {signal});
             //d.addEventListener('touchstart', gstart);
 		}
-		this.onstart && this.onstart(e);
-		touching = true;
+		this.running = true;
 	}
 	move(e) {
 
@@ -92,8 +95,7 @@ export class PointerObserver {
 		if (e.changedTouches && e.changedTouches[0].identifier !== this.identifier) return;
 		this.onstop && this.onstop(e);
 		this.abortCtrl.abort();
-		touching = false;
-		this.touching = false;
+		this.running = false;
 	}
 
     get diff() { // should we direct calculate this before onmove? i think .startDiff is almost ever used
@@ -103,15 +105,13 @@ export class PointerObserver {
             time: this.pos.time - this.last.time,
         };
     }
-    /*
     get startDiff() {
         return {
-            x: this.posStart.x - this.pos.x,
-            y: this.posStart.y - this.pos.y,
+            x: this.pos.x - this.posStart.x,
+            y: this.pos.y - this.posStart.y,
             time: this.pos.time - this.posStart.time,
         };
     }
-    */
 
 }
 

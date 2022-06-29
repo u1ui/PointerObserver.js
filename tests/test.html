@@ -16,22 +16,22 @@
 
 <section>
 
-    <div id=el style="position:absolute; padding:1rem; background:#eee; box-shadow: 0 0 10px #0007; z-index:9">
+    <div id=el style="user-select:none; -webkit-user-select:none; position:absolute; padding:2rem; background:#eee; box-shadow: 0 0 10px #0007; z-index:9">
         StartObserving
+        <span id=hover style="border:1px solid; font-size:12px">hover to start</span>
     </div>
 
     <script type=module style="display:block">
         import {PointerObserver} from "../PointerObserver.js";
 
         const observer = new PointerObserver(el);
-        observer.onstart = function(e){
-            e.preventDefault();
-        }
         observer.onmove = function(e){
-            console.log(this.pos);
             el.style.left = this.pos.x + "px";
             el.style.top = this.pos.y + "px";
         }
+        hover.addEventListener("mouseover", function(e){
+            observer.start(e);
+        });
     </script>
 
 
