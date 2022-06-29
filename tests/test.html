@@ -24,6 +24,9 @@
         import {PointerObserver} from "../PointerObserver.js";
 
         const observer = new PointerObserver(el);
+        observer.onstart = function(e){
+            e.preventDefault();
+        }
         observer.onmove = function(e){
             console.log(this.pos);
         }
