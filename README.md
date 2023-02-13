@@ -16,7 +16,7 @@ new PointerObserver(el).onmove = function(e){
 </div>
 ```
 
-[doc](https://doc.deno.land/https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@$x.x.x/PointerObserver.js)
+[doc](https://doc.deno.land/https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@$main/PointerObserver.js)
 
 ## Install
 
