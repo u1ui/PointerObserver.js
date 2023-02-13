@@ -16,12 +16,12 @@ new PointerObserver(el).onmove = function(e){
 </div>
 ```
 
-[doc](https://doc.deno.land/https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@1.0.0/PointerObserver.js)
+[doc](https://doc.deno.land/https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@$x.x.x/PointerObserver.js)
 
 ## Install
 
 ```js
-import {PointerObserver} from "https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@1.0.0/PointerObserver.min.js"
+import {PointerObserver} from "https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@x.x.x/PointerObserver.min.js"
 ```
 
 ## Demos
