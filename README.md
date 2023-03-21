@@ -21,7 +21,7 @@ new PointerObserver(el).onmove = function(e){
 ## Install
 
 ```js
-import {PointerObserver} from "https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@x.x.x/PointerObserver.min.js"
+import * as module from "https://cdn.jsdelivr.net/gh/u1ui/PointerObserver.js@x.x.x/PointerObserver.min.js"
 ```
 
 ## Demos
